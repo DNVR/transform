@@ -1,0 +1,20 @@
+{
+  "name": "@dnvr/transform",
+  "version": "1.0.0",
+  "description": "A CSS Transform library.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc -p ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DNVR/transform.git"
+  },
+  "author": "Denver Dias",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/DNVR/transform/issues"
+  },
+  "homepage": "https://github.com/DNVR/transform#readme"
+}
