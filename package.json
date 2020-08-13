@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/DNVR/transform/issues"
   },
-  "homepage": "https://github.com/DNVR/transform#readme"
+  "homepage": "https://github.com/DNVR/transform#readme",
+  "devDependencies": {
+    "typescript": "^3.9.7"
+  }
 }
