@@ -5,8 +5,8 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "build:clear": "./node_modules/.bin/rimraf dist",
-    "build:bundle": "tsc -p .",
+    "build:clear": "npx rimraf dist",
+    "build:bundle": "npx tsc",
     "build": "npm run build:clear && npm run build:bundle"
   },
   "repository": {
@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/DNVR/transform#readme",
   "devDependencies": {
+    "npx": "^10.2.2",
     "rimraf": "^3.0.2",
     "typescript": "^3.9.7"
   },
