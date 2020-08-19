@@ -1,7 +1,7 @@
 {
   "name": "@dnvr/transform",
   "version": "1.0.3",
-  "description": "A CSS Transform library.",
+  "description": "A library implements CSS Transforms in JavaScript.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
