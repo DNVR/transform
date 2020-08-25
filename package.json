@@ -2,7 +2,7 @@
   "name": "@dnvr/transform",
   "version": "1.0.3",
   "description": "A library implements CSS Transforms in JavaScript.",
-  "main": "dist/index.js",
+  "browser": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
     "build:clear": "npx rimraf dist",
