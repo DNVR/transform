@@ -227,7 +227,7 @@ class DirtyTransform {
     return this.scale3d( n, n, n )
   }
 
-  perspective ( n: number = 0 ): DirtyTransform {
+  public perspective ( n: number = 0 ): DirtyTransform {
     let {
       dial,
       matrix
