@@ -194,7 +194,7 @@ class DirtyTransform {
     return this.skew( 0, y )
   }
 
-  scale3d ( x: number = 1, y: number = 1, z: number = 1 ): DirtyTransform {
+  public scale3d ( x: number = 1, y: number = 1, z: number = 1 ): DirtyTransform {
     let { matrix, dial } = this
 
     x = 1 + ( x - 1 ) * dial
@@ -211,19 +211,19 @@ class DirtyTransform {
     return new DirtyTransform( premultiply( multiplicand, matrix ), dial )
   }
 
-  scaleX ( x: number = 1 ): DirtyTransform {
+  public scaleX ( x: number = 1 ): DirtyTransform {
     return this.scale3d( x, 1, 1 )
   }
 
-  scaleY ( y: number = 1 ): DirtyTransform {
+  public scaleY ( y: number = 1 ): DirtyTransform {
     return this.scale3d( 1, y, 1 )
   }
 
-  scaleZ ( z: number = 1 ): DirtyTransform {
+  public scaleZ ( z: number = 1 ): DirtyTransform {
     return this.scale3d( 1, 1, z )
   }
 
-  scale ( n: number = 1 ): DirtyTransform {
+  public scale ( n: number = 1 ): DirtyTransform {
     return this.scale3d( n, n, n )
   }
 
