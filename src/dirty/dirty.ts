@@ -67,7 +67,7 @@ class DirtyTransform {
     return this.css()
   }
 
-  translate ( x: number = 0, y: number = 0, z: number = 0 ): DirtyTransform {
+  public translate ( x: number = 0, y: number = 0, z: number = 0 ): DirtyTransform {
     let { matrix, dial } = this
     x = x * dial
     y = y * dial
@@ -83,15 +83,15 @@ class DirtyTransform {
     return new DirtyTransform( premultiply( multiplicand, matrix ), dial )
   }
 
-  translateX ( x: number = 0 ): DirtyTransform {
+  public translateX ( x: number = 0 ): DirtyTransform {
     return this.translate( x, 0, 0 )
   }
 
-  translateY ( y: number = 0 ): DirtyTransform {
+  public translateY ( y: number = 0 ): DirtyTransform {
     return this.translate( 0, y, 0 )
   }
 
-  translateZ ( z: number = 0 ): DirtyTransform {
+  public translateZ ( z: number = 0 ): DirtyTransform {
     return this.translate( 0, 0, z )
   }
 
