@@ -95,7 +95,7 @@ class DirtyTransform {
     return this.translate( 0, 0, z )
   }
 
-  rotateRad3d ( x: number = 0, y: number = 0, z: number = 0, a: number = 0 ): DirtyTransform {
+  public rotateRad3d ( x: number = 0, y: number = 0, z: number = 0, a: number = 0 ): DirtyTransform {
     let norm = sqrt( x * x + y * y + z * z )
 
     if ( 0 === norm ) return this
@@ -123,35 +123,35 @@ class DirtyTransform {
     return new DirtyTransform( premultiply( multiplicand, matrix ), dial )
   }
 
-  rotate3d ( x: number = 0, y: number = 0, z: number = 1, a: number = 0 ): DirtyTransform {
+  public rotate3d ( x: number = 0, y: number = 0, z: number = 1, a: number = 0 ): DirtyTransform {
     return this.rotateRad3d( x, y, z, degree2radian( a ) )
   }
 
-  rotateRadX ( x: number = 0 ): DirtyTransform {
+  public rotateRadX ( x: number = 0 ): DirtyTransform {
     return this.rotateRad3d( 1, 0, 0, x )
   }
 
-  rotateRadY ( y: number = 0 ): DirtyTransform {
+  public rotateRadY ( y: number = 0 ): DirtyTransform {
     return this.rotateRad3d( 0, 1, 0, y )
   }
 
-  rotateRadZ ( z: number = 0 ): DirtyTransform {
+  public rotateRadZ ( z: number = 0 ): DirtyTransform {
     return this.rotateRad3d( 0, 0, 1, z )
   }
 
-  rotateX ( x: number = 0 ): DirtyTransform {
+  public rotateX ( x: number = 0 ): DirtyTransform {
     return this.rotateRadX( degree2radian( x ) )
   }
 
-  rotateY ( y: number = 0 ): DirtyTransform {
+  public rotateY ( y: number = 0 ): DirtyTransform {
     return this.rotateRadY( degree2radian( y ) )
   }
 
-  rotateZ ( z: number = 0 ): DirtyTransform {
+  public rotateZ ( z: number = 0 ): DirtyTransform {
     return this.rotateRadZ( degree2radian( z ) )
   }
 
-  rotate ( z: number = 0 ): DirtyTransform {
+  public rotate ( z: number = 0 ): DirtyTransform {
     return this.rotateRadZ( degree2radian( z ) )
   }
 
