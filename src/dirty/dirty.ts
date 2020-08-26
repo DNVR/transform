@@ -155,7 +155,7 @@ class DirtyTransform {
     return this.rotateRadZ( degree2radian( z ) )
   }
 
-  skewRad ( x: number = 0, y: number = 0 ): DirtyTransform {
+  public skewRad ( x: number = 0, y: number = 0 ): DirtyTransform {
     let { matrix, dial } = this
 
     x = x * dial
@@ -174,23 +174,23 @@ class DirtyTransform {
     return new DirtyTransform( premultiply( multiplicand, matrix ), dial )
   }
 
-  skewRadX ( x: number = 0 ): DirtyTransform {
+  public skewRadX ( x: number = 0 ): DirtyTransform {
     return this.skewRad( x, 0 )
   }
 
-  skewRadY ( y: number = 0 ): DirtyTransform {
+  public skewRadY ( y: number = 0 ): DirtyTransform {
     return this.skewRad( 0, y )
   }
 
-  skew ( x: number = 0, y: number = 0 ): DirtyTransform {
+  public skew ( x: number = 0, y: number = 0 ): DirtyTransform {
     return this.skewRad( degree2radian( x ), degree2radian( y ) )
   }
 
-  skewX ( x: number = 0 ): DirtyTransform {
+  public skewX ( x: number = 0 ): DirtyTransform {
     return this.skew( x, 0 )
   }
 
-  skewY ( y: number = 0 ): DirtyTransform {
+  public skewY ( y: number = 0 ): DirtyTransform {
     return this.skew( 0, y )
   }
 
