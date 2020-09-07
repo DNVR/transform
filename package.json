@@ -8,9 +8,11 @@
     "access": "public"
   },
   "scripts": {
-    "build:clear": "npx rimraf dist",
-    "build:bundle": "npx tsc",
-    "build": "npm run build:clear && npm run build:bundle"
+    "build:clear": "npx rimraf dist && npx rimraf build",
+    "build:construct:assembly": "npx asc assembly/transform.ts -b build/transform.wasm -t build/transform.wat -d build/transform.d.ts --importMemory -O3z --converge --noAssert --runtime none",
+    "build:construct:module": "npx tsc",
+    "build:construct": "npm run build:construct:assembly && npm run build:construct:module",
+    "build": "npm run build:clear && npm run build:construct"
   },
   "repository": {
     "type": "git",
@@ -23,7 +25,6 @@
   },
   "homepage": "https://github.com/DNVR/transform#readme",
   "devDependencies": {
-    "assemblyscript": "^0.14.10",
     "npx": "^10.2.2",
     "rimraf": "^3.0.2",
     "typescript": "^3.9.7"
