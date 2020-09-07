@@ -19,6 +19,7 @@ const degree2radian = function ( deg: number ): number {
   return pi * deg / 180
 }
 
+// @ts-ignore
 const radian2degree = function ( rad: number ): number {
   return 180 * rad / pi
 }
