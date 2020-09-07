@@ -268,9 +268,6 @@ function TransformComputer ( lib: typeof window, foreign: any, heap: ArrayBuffer
     var result3 = 0.0
     var result4 = 0.0
 
-    var s = 0.0
-    var c = 0.0
-
     var x = 0.0
     var y = 0.0
     var z = 0.0
