@@ -25,9 +25,12 @@
   },
   "homepage": "https://github.com/DNVR/transform#readme",
   "devDependencies": {
+    "assemblyscript": "^0.14.10",
     "npx": "^10.2.2",
     "rimraf": "^3.0.2",
     "typescript": "^3.9.7"
   },
-  "dependencies": {}
+  "dependencies": {
+    "wasm-loader": "^1.3.0"
+  }
 }
