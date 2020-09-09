@@ -4,7 +4,7 @@ export {
 
 import TransformComputer from './asm/transform.asm'
 import TransformWASMDefinitions from '../build/transform'
-// import TransformWASM from 'wasm-loader!./../build/transform'
+import TransformWASM from 'file-loader!./../build/transform.wasm'
 
 const TrueMeasurements = {
   width: 0,
@@ -18,23 +18,29 @@ const TrueMeasurements = {
 }
 
 let memorySize = 0x100
-let memory
+let memory: WebAssembly.Memory
 
 try {
   memory = new WebAssembly.Memory( { initial: memorySize } )
 
-  // TransformWASM( {
-  //   env: {
-  //     memory
-  //   }
-  // } ).then( ( instance: { exports: typeof TransformWASMDefinitions } ) => {
-  //   Object.assign( TransformModule, instance.exports )
-  //   TransformModule.start( foreign.parameterStart )
-  //   setViewport()
-  // } )
+  fetch( TransformWASM ).then( ( response: Response ) => {
+    return response.arrayBuffer()
+  }).then( buffer => {
+    return WebAssembly.compile( buffer )
+  }).then( module => {
+    return WebAssembly.instantiate( module, {
+      env: {
+        memory
+      }
+    })
+  }).then( instance => {
+    Object.assign( TransformModule, instance.exports )
+    TransformModule.start( foreign.parameterStart )
+    setViewport()
+  })
 }
 catch ( e ) {
-  memory = {
+  memory = <any> {
     buffer: new ArrayBuffer( 0x10000 * memorySize )
   }
 }
