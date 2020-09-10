@@ -22,22 +22,22 @@ let memory: WebAssembly.Memory
 try {
   memory = new WebAssembly.Memory( { initial: memorySize } )
 
-  void async function initialise () {
-    const TransformWASM = await import( 'file-loader!./../build/transform.wasm' )
+  // void async function initialise () {
+  //   const TransformWASM = await import( 'file-loader!./../build/transform.wasm' )
 
-    let response = await fetch( TransformWASM as any )
-    let buffer = await response.arrayBuffer()
-    let module = await WebAssembly.compile( buffer )
-    let instance = await WebAssembly.instantiate( module, {
-      env: {
-        memory
-      }
-    })
+  //   let response = await fetch( TransformWASM as any )
+  //   let buffer = await response.arrayBuffer()
+  //   let module = await WebAssembly.compile( buffer )
+  //   let instance = await WebAssembly.instantiate( module, {
+  //     env: {
+  //       memory
+  //     }
+  //   })
 
-    Object.assign( TransformModule, instance.exports )
-    TransformModule.start( foreign.parameterStart )
-    setViewport()
-  }()
+  //   Object.assign( TransformModule, instance.exports )
+  //   TransformModule.start( foreign.parameterStart )
+  //   setViewport()
+  // }()
 }
 catch ( e ) {
   memory = <any> {
