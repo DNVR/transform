@@ -173,7 +173,11 @@ abstract class Length extends Parameter {
   }
 }
 
-class Pixel extends Length { }
+class Pixel extends Length {
+  constructor ( value: number = 0 ) {
+    super( value )
+  }
+}
 
 class Inch extends Length {
   constructor ( value: number = 0 ) {
@@ -340,7 +344,11 @@ abstract class Angle extends Parameter {
   }
 }
 
-class Radians extends Angle { }
+class Radians extends Angle {
+  constructor ( value: number = 0 ) {
+    super( value )
+  }
+}
 
 class Degrees extends Angle {
   constructor ( value: number = 0 ) {
@@ -1038,8 +1046,6 @@ const resultMatrix: TransformMatrix = <any> new Float32Array( moduleBuffer, fore
 
 class Transform {
 
-  altAttr: string
-
   static get Functions () {
     return Functions
   }
@@ -1060,10 +1066,8 @@ class Transform {
     return Dials
   }
 
-  constructor ( entry: AnythingWithStyle, altAttr: string = 'style' ) {
+  constructor ( entry: AnythingWithStyle ) {
     TransformElementMap.set( this, entry )
-
-    this.altAttr = altAttr
 
     TransformListMap.set( this, [] )
     TransformDialMap.set( this, 0 )
