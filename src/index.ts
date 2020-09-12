@@ -1137,13 +1137,13 @@ const transformLister = function ( dialObject: InternalDialObject, entry: Transf
   return dialObject
 }
 
-function changeTrigger ( entry: Transform | Transformation | Parameter | Calc ) {
+function changeTrigger ( entry: Transform | Transformation | Parameter | Calc ): void {
   entry[ ChangeTriggerMethod ]()
 }
-function subscriber ( this: any, entry: TransformationOrDial | Parameter | Calc ) {
+function subscriber ( this: any, entry: TransformationOrDial | Parameter | Calc ): void {
   entry[ SubscribeMethod ]( this )
 }
-function unsubscriber ( this: any, entry: TransformationOrDial | Parameter | Calc ) {
+function unsubscriber ( this: any, entry: TransformationOrDial | Parameter | Calc ): void {
   entry[ UnsubscribeMethod ]( this )
 }
 
